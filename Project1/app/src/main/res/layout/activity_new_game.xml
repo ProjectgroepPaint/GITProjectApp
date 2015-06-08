@@ -7,25 +7,68 @@
     tools:context="com.example.anthony.project1.NewGameActivity"
     android:background="@drawable/background">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Kies een Wegdek"
-        android:id="@+id/kiesweg"
-        android:textColor="#ffffff"
-        android:textSize="60dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/kruispuntknop"
-        android:src="@drawable/kruispuntknop"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:clickable="true"
-        android:onClick="newPage" />
+        android:layout_marginTop="20dp"
+        android:id="@+id/menu2_kiesweg"
+        android:src="@drawable/menu2_kiesweg"
+        android:layout_centerHorizontal="true"/>
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="350dp"
+            android:orientation="horizontal">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="25dp"
+               android:id="@+id/menu2_kruispunt"
+               android:src="@drawable/menu2_kruispunt"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPage" />
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="25dp"
+               android:id="@+id/menu2_rotonde"
+               android:src="@drawable/menu2_rotonde"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPage" />
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="25dp"
+               android:id="@+id/menu2_tsplit"
+               android:src="@drawable/menu2_tsplit"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPage" />
+
+            <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/menu2_invoeg"
+               android:src="@drawable/menu2_invoeg"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPage" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </RelativeLayout>
