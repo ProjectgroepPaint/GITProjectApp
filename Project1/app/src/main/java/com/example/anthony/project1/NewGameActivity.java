@@ -42,7 +42,7 @@ public class NewGameActivity extends Activity {
     }
 
     public void newPage(View V) {
-
+        String image = "Poland";
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");

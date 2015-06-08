@@ -1,9 +1,15 @@
 package com.example.anthony.project1;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
+import java.util.HashMap;
 
 
 public class Board extends Activity {
@@ -12,6 +18,26 @@ public class Board extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
+
+        String source = "drawable/";
+        String image = "kruispunt";
+        String uri = source + image;
+
+        LinearLayout picLL = new LinearLayout(this);
+        picLL.layout(0, 0, 100, 100);
+        picLL.setLayoutParams(new RelativeLayout.LayoutParams(100, 100));
+        picLL.setOrientation(LinearLayout.HORIZONTAL);
+
+        HashMap<String, Integer> images = new HashMap<String, Integer>();
+        images.put( "invoegstrook", Integer.valueOf( R.drawable.invoegstrook ) );
+        images.put( "kruispunt", Integer.valueOf( R.drawable.kruispunt ) );
+        images.put( "rotonde", Integer.valueOf( R.drawable.rotonde ) );
+        images.put( "tsplit", Integer.valueOf( R.drawable.kruispunt ) );
+
+        ImageView myImage = new ImageView(this);
+        myImage.setImageResource( images.get( image ).intValue() );
+        picLL.addView(myImage);
+        setContentView(picLL);
     }
 
     @Override
@@ -35,4 +61,6 @@ public class Board extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
