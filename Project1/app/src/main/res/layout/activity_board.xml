@@ -7,4 +7,14 @@
     tools:context="com.example.anthony.project1.Board"
     android:background="@drawable/background">
 
+    <ImageView
+        android:layout_width="650dp"
+        android:layout_height="425dp"
+        android:layout_weight="50"
+        android:id="@+id/wegdek"
+        android:scaleType="centerCrop"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="false" />
 </RelativeLayout>
+

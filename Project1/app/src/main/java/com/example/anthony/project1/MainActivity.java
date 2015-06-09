@@ -56,11 +56,8 @@ public class MainActivity extends Activity {
     }
 
     public void newPage(View V){
-
         Intent intent = new Intent(this, NewGameActivity.class);
         startActivity(intent);
-    Log.d("startactivity","end of new page method");
-
-        //new page method
+        Log.d("startactivity","end of new page method");
     }
 }

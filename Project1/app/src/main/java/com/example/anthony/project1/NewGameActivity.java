@@ -41,10 +41,32 @@ public class NewGameActivity extends Activity {
 
     }
 
-    public void newPage(View V) {
-        String image = "Poland";
+    public void newPageKruispunt(View V) {
+        Board.setString("kruispunt");
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
     }
+
+    public void newPageRotonde (View V) {
+        Board.setString("rotonde");
+        Intent intent = new Intent(this, Board.class);
+        startActivity(intent);
+        Log.d("startactivity", "end of new page method");
+    }
+
+    public void newPageTsplit (View V) {
+        Board.setString("tsplit");
+        Intent intent = new Intent(this, Board.class);
+        startActivity(intent);
+        Log.d("startactivity", "end of new page method");
+    }
+
+    public void newPageInvoeg(View V) {
+        Board.setString("invoegstrook");
+        Intent intent = new Intent(this, Board.class);
+        startActivity(intent);
+        Log.d("startactivity", "end of new page method");
+    }
+
 }
