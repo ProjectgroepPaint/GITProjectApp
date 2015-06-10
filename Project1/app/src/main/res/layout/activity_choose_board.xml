@@ -8,12 +8,149 @@
     tools:context="com.example.anthony.project1.Board"
     android:background="@drawable/background">
 
+
     <ImageView
-        android:layout_width="750dp"
-        android:layout_height="490dp"
-        android:id="@+id/wegdek"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/bordknop"
+        android:background="@drawable/voorrangs_bord"
+        android:src="@drawable/voorrangs_bord"
+        android:layout_alignTop="@+id/wegdek"
+        android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/einde_voorrang"
+        android:src="@drawable/einde_voorrang"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/imageView4"
+        android:layout_marginEnd="95dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView4"
+        android:background="@drawable/voorrang2"
+        android:src="@drawable/voorrang2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView5"
+        android:background="@drawable/haaientand"
+        android:src="@drawable/haaientand"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/imageView6"
+        android:layout_marginEnd="85dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView6"
+        android:background="@drawable/stop"
+        android:src="@drawable/stop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="38dp" />
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView8"
+        android:background="@drawable/verboden_in"
+        android:src="@drawable/verboden_in"
+        android:layout_below="@+id/bordknop"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="67dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView9"
+        android:background="@drawable/verboden_in2"
+        android:src="@drawable/verboden_in2"
+        android:layout_alignTop="@+id/imageView8"
+        android:layout_alignStart="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView10"
+        android:background="@drawable/rechtdoor"
+        android:src="@drawable/rechtdoor"
+        android:layout_alignTop="@+id/imageView9"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageView11"
+        android:background="@drawable/links"
+        android:src="@drawable/links"
+        android:layout_alignTop="@+id/imageView10"
+        android:layout_alignStart="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageView12"
+        android:background="@drawable/rechts"
+        android:src="@drawable/rechts"
+        android:layout_alignTop="@+id/imageView11"
+        android:layout_alignStart="@+id/imageView6" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView7"
+        android:background="@drawable/rotonde2"
+        android:src="@drawable/rotonde2"
+        android:layout_marginBottom="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView13"
+        android:background="@drawable/verb_inhalen"
+        android:src="@drawable/verb_inhalen"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_alignStart="@+id/imageView9" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView14"
+        android:background="@drawable/verboden_keren"
+        android:src="@drawable/verboden_keren"
+        android:layout_alignBottom="@+id/imageView13"
+        android:layout_alignStart="@+id/imageView10" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView15"
+        android:background="@drawable/voetgangers"
+        android:src="@drawable/voetgangers"
+        android:layout_alignTop="@+id/imageView14"
+        android:layout_alignStart="@+id/imageView11" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView16"
+        android:background="@drawable/fietspad"
+        android:src="@drawable/fietspad"
+        android:layout_alignTop="@+id/imageView15"
+        android:layout_alignStart="@+id/imageView12" />
+
 
 </RelativeLayout>
+
 
