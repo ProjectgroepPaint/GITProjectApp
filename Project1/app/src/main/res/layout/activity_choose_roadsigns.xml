@@ -1,12 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingRight="10dp"
     android:paddingLeft= "35dp"
     tools:context="com.example.anthony.project1.Board"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:id="@+id/">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -20,23 +21,22 @@
         android:layout_marginTop="51dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView18"
-        android:background="@drawable/fietspad2"
         android:src="@drawable/fietspad2"
-        android:layout_marginStart="98dp"
-        android:layout_alignTop="@+id/imageView17"
+        android:layout_marginStart="114dp"
+        android:layout_alignTop="@+id/imageView20"
         android:layout_toEndOf="@+id/imageView17" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
         android:id="@+id/imageView19"
-        android:background="@drawable/haaientanden2"
         android:src="@drawable/haaientanden2"
-        android:layout_alignBottom="@+id/imageView18"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBottom="@+id/imageView20"
+        android:layout_toEndOf="@+id/imageView18"
+        android:layout_marginStart="117dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -44,18 +44,44 @@
         android:id="@+id/imageView20"
         android:background="@drawable/zebrapad"
         android:src="@drawable/zebrapad"
+        android:layout_marginEnd="86dp"
         android:layout_alignBottom="@+id/imageView17"
-        android:layout_toEndOf="@+id/imageView19"
-        android:layout_marginStart="140dp" />
+        android:layout_alignParentEnd="true" />
+
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView24"
+        android:background="@drawable/lines"
+        android:src="@drawable/lines"
+        android:layout_marginBottom="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageView17" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView21"
+        android:src="@drawable/fietspadm"
+        android:layout_alignTop="@+id/imageView24"
+        android:layout_toStartOf="@+id/imageView19" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView22"
+        android:src="@drawable/fietspadz"
+        android:layout_alignBottom="@+id/imageView21"
+        android:layout_alignStart="@+id/imageView19" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView21"
-        android:background="@drawable/pijl-a"
-        android:src="@drawable/pijl-a"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/imageView17" />
+        android:id="@+id/imageView23"
+        android:src="@drawable/weg"
+        android:layout_alignBottom="@+id/imageView22"
+        android:layout_alignStart="@+id/imageView20" />
 
 
 </RelativeLayout>
