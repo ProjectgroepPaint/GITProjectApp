@@ -39,6 +39,10 @@
             android:name=".choose_roadsigns"
             android:label="@string/title_activity_choose_roadsigns" >
         </activity>
+        <activity
+            android:name=".choose_vehicle"
+            android:label="@string/title_activity_choose_vehicle" >
+        </activity>
     </application>
 
 </manifest>

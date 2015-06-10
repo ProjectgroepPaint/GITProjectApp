@@ -8,4 +8,5 @@
     <string name="title_activity_choose_board">choose_board</string>
     <string name="title_activity_choose_">choose_</string>
     <string name="title_activity_choose_roadsigns">ChooseRoadSigns</string>
+    <string name="title_activity_choose_vehicle">choose_vehicle</string>
 </resources>
