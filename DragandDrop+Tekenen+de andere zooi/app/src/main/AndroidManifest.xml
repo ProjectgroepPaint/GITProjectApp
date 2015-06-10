@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.anthony.project1" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewGameActivity"
+            android:label="@string/title_activity_new_game"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".Board"
+            android:label="@string/title_activity_board"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".choose_board"
+            android:label="@string/title_activity_choose_board" >
+        </activity>
+        <activity
+            android:name=".choose_"
+            android:label="@string/title_activity_choose_" >
+        </activity>
+        <activity
+            android:name=".choose_roadsigns"
+            android:label="@string/title_activity_choose_roadsigns" >
+        </activity>
+        <activity
+            android:name=".choose_vehicle"
+            android:label="@string/title_activity_choose_vehicle" >
+        </activity>
+    </application>
+
+</manifest>
