@@ -31,6 +31,14 @@
             android:name=".choose_board"
             android:label="@string/title_activity_choose_board" >
         </activity>
+        <activity
+            android:name=".choose_"
+            android:label="@string/title_activity_choose_" >
+        </activity>
+        <activity
+            android:name=".choose_roadsigns"
+            android:label="@string/title_activity_choose_roadsigns" >
+        </activity>
     </application>
 
 </manifest>
