@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingRight="10dp"
+    android:paddingLeft= "35dp"
+    tools:context="com.example.anthony.project1.Board"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:layout_width="750dp"
+        android:layout_height="490dp"
+        android:id="@+id/wegdek"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
+
