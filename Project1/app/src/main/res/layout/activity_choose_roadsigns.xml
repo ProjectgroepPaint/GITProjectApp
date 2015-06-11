@@ -6,8 +6,8 @@
     android:paddingRight="10dp"
     android:paddingLeft= "35dp"
     tools:context="com.example.anthony.project1.Board"
-    android:background="@drawable/background"
-    android:id="@+id/">
+    android:background="@drawable/background">
+
 
     <ImageView
         android:layout_width="wrap_content"
@@ -79,6 +79,7 @@
         android:src="@drawable/weg"
         android:layout_alignBottom="@+id/imageView22"
         android:layout_alignStart="@+id/imageView20" />
+
 
 
 </RelativeLayout>
