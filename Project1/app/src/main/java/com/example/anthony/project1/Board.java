@@ -1,10 +1,13 @@
 package com.example.anthony.project1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -62,6 +65,21 @@ public class Board extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+    public void newBoardPage(View V){
+        Intent intent = new Intent(this, choose_board.class);
+        startActivity(intent);
+        Log.d("startactivity", "end of new page method");
+    }
 
+    public void newRoadSignPage(View V){
+        Intent intent = new Intent(this, choose_roadsigns.class);
+        startActivity(intent);
+        Log.d("startactivity", "end of new page method");
+    }
 
+    public void newVehiclePage(View V){
+        Intent intent = new Intent(this, choose_vehicle.class);
+        startActivity(intent);
+        Log.d("startactivity", "end of new page method");
+    }
 }

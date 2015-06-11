@@ -23,7 +23,8 @@
         android:src="@drawable/c01"
         android:layout_alignTop="@+id/wegdek"
         android:layout_alignParentStart="true"
-        android:onClick="newPage" />
+        android:onClick="newBoardPage"
+        android:clickable="true"/>
 
     <ImageView
         android:layout_width="150dp"
@@ -32,7 +33,9 @@
         android:src="@drawable/zebrapad"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/bordknop"
-        android:layout_alignEnd="@+id/bordknop" />
+        android:layout_alignEnd="@+id/bordknop"
+        android:onClick="newRoadSignPage"
+        android:clickable="true"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -51,7 +54,10 @@
         android:src="@drawable/car2"
         android:layout_marginTop="30dp"
         android:layout_alignTop="@+id/wegknop"
-        android:layout_alignStart="@+id/wegknop" />
+        android:layout_alignStart="@+id/wegknop"
+        android:onClick="newVehiclePage"
+        android:clickable="true"/>
+    />
 
 </RelativeLayout>
 
