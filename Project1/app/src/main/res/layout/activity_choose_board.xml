@@ -50,7 +50,9 @@
         android:src="@drawable/stop"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="38dp" />
+        android:layout_marginEnd="38dp"
+        android:onClick="goBack"
+        android:clickable="true" />
 
 
     <ImageView
