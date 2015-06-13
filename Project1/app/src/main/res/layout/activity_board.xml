@@ -6,7 +6,8 @@
     android:paddingRight="10dp"
     android:paddingLeft= "35dp"
     tools:context="com.example.anthony.project1.Board"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:id="@+id/layout">
 
     <ImageView
         android:layout_width="750dp"

@@ -43,6 +43,18 @@ public class choose_board extends Activity {
     }
 
     public void goBack(View V) {
+
+        ImageView Image = new ImageView(this);
+        Image.setImageResource(R.drawable.stop);
+        RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout2);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        rl.addView(Image, lp);
+
+
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         finish();
