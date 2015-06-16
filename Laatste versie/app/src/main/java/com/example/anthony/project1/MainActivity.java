@@ -59,5 +59,6 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, NewGameActivity.class);
         startActivity(intent);
         Log.d("startactivity","end of new page method");
+        finish();
     }
 }

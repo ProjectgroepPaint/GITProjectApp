@@ -11,12 +11,75 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 
-public class choose_board extends Activity {
+public class choose_board extends Activity implements View.OnClickListener {
+
+
+
+    private ImageView bordknop;
+    private ImageView imageView3;
+    private ImageView imageView4;
+    private ImageView imageView5;
+    private ImageView imageView6;
+    private ImageView imageView7;
+    private ImageView imageView8;
+    private ImageView imageView9;
+    private ImageView imageView10;
+    private ImageView imageView11;
+    private ImageView imageView12;
+    private ImageView imageView13;
+    private ImageView imageView14;
+    private ImageView imageView15;
+    private ImageView imageView16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_board);
+
+        bordknop = (ImageView) findViewById(R.id.bordknop);
+        bordknop.setOnClickListener(this);
+
+        imageView3 = (ImageView) findViewById(R.id.imageView3);
+        imageView3.setOnClickListener(this);
+
+        imageView4 = (ImageView) findViewById(R.id.imageView4);
+        imageView4.setOnClickListener(this);
+
+        imageView5 = (ImageView) findViewById(R.id.imageView5);
+        imageView5.setOnClickListener(this);
+
+        imageView6 = (ImageView) findViewById(R.id.imageView6);
+        imageView6.setOnClickListener(this);
+
+        imageView7 = (ImageView) findViewById(R.id.imageView7);
+        imageView7.setOnClickListener(this);
+
+        imageView8 = (ImageView) findViewById(R.id.imageView8);
+        imageView8.setOnClickListener(this);
+
+        imageView9 = (ImageView) findViewById(R.id.imageView9);
+        imageView9.setOnClickListener(this);
+
+        imageView10 = (ImageView) findViewById(R.id.imageView10);
+        imageView10.setOnClickListener(this);
+
+        imageView11 = (ImageView) findViewById(R.id.imageView11);
+        imageView11.setOnClickListener(this);
+
+        imageView12 = (ImageView) findViewById(R.id.imageView12);
+        imageView12.setOnClickListener(this);
+
+        imageView13 = (ImageView) findViewById(R.id.imageView13);
+        imageView13.setOnClickListener(this);
+
+        imageView14 = (ImageView) findViewById(R.id.imageView14);
+        imageView14.setOnClickListener(this);
+
+        imageView15 = (ImageView) findViewById(R.id.imageView15);
+        imageView15.setOnClickListener(this);
+
+        imageView16 = (ImageView) findViewById(R.id.imageView16);
+        imageView16.setOnClickListener(this);
     }
 
 
@@ -56,5 +119,16 @@ public class choose_board extends Activity {
         Intent backIntent = new Intent(this, Board.class);
         backIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(backIntent);
+        finish();
+    }
+    public void onClick(View v)
+    {
+        Intent backIntent = new Intent(this, Board.class);
+        backIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(backIntent);
+        String Image = v.getTag().toString();
+        Board.setImage(Image);
+        Board.ImageTrue();
+        finish();
     }
 }

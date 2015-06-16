@@ -46,6 +46,7 @@ public class NewGameActivity extends Activity {
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
+        finish();
     }
 
     public void newPageRotonde (View V) {
@@ -53,6 +54,7 @@ public class NewGameActivity extends Activity {
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
+        finish();
     }
 
     public void newPageTsplit (View V) {
@@ -60,6 +62,7 @@ public class NewGameActivity extends Activity {
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
+        finish();
     }
 
     public void newPageInvoeg(View V) {
@@ -67,6 +70,7 @@ public class NewGameActivity extends Activity {
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
+        finish();
     }
 
 }
