@@ -110,10 +110,10 @@ public class Board extends Activity implements OnClickListener {
     }
 
     public void newBoardPage(View V) {
-        drawingView.activateEraser();
         Intent toBintent = new Intent(this, choose_board.class);
         toBintent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(toBintent);
+        drawingView.activateEraser();
     }
 
     public static int getImageId(Context context, String imageName) {
@@ -134,7 +134,6 @@ public class Board extends Activity implements OnClickListener {
     int i = 100;
     public void createbord()
     {
-
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(i, 100);
         i = i - 50;
         ImageView Image = new ImageView(this);
