@@ -1,6 +1,7 @@
 package com.example.anthony.project1;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -27,9 +28,14 @@ import java.util.HashMap;
 public class Board extends Activity implements OnClickListener {
 
     public static String stringImage;
+    public static String ImagePath;
+    private static boolean SpawnImage = false;
 
     public static void setString(String s){
         stringImage = s;
+    }
+    public static void setImage(String s){
+        ImagePath = s;
     }
 
 
@@ -71,6 +77,15 @@ public class Board extends Activity implements OnClickListener {
         img.setImageResource(images.get(stringImage).intValue());
 
     }
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        if (SpawnImage == true)
+        {
+            createbord();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -94,11 +109,6 @@ public class Board extends Activity implements OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
-    /*public void newBoardPage(View V){
-        Intent intent = new Intent(this, choose_board.class);
-        startActivity(intent);
-        Log.d("startactivity", "end of new page method");
-    }*/
     public void newBoardPage(View V) {
         drawingView.activateEraser();
         Intent toBintent = new Intent(this, choose_board.class);
@@ -106,6 +116,9 @@ public class Board extends Activity implements OnClickListener {
         startActivity(toBintent);
     }
 
+    public static int getImageId(Context context, String imageName) {
+        return context.getResources().getIdentifier("drawable/" + imageName, null, context.getPackageName());
+    }
 
 
 //	@Override
@@ -115,15 +128,26 @@ public class Board extends Activity implements OnClickListener {
 //		return true;
 //	}
 
+    public static void ImageTrue() {SpawnImage = true;}
+    public static void ImageFalse() {SpawnImage = false;}
+
+    int i = 100;
     public void createbord()
     {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(100, 100);
 
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(i, 100);
+        i = i - 50;
         ImageView Image = new ImageView(this);
-        Image.setImageResource(R.drawable.stop);
+        Image.setImageResource(getImageId(this, ImagePath));
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
         rl.addView(Image);
         Image.setLayoutParams(layoutParams);
+        ImageFalse();
+    }
+
+    public void onBackPressed()
+    {
+        /*do nothing*/
     }
 
     public void onClick(View v) {

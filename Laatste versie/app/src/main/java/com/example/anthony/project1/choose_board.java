@@ -47,6 +47,8 @@ public class choose_board extends Activity {
         Intent backIntent = new Intent(this, Board.class);
         backIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(backIntent);
+        Board.setImage("stop");
+        Board.ImageTrue();
 
     }
     @Override
