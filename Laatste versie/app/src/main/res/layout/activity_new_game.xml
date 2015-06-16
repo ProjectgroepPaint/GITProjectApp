@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.anthony.project1.NewGameActivity"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/menu2_kiesweg"
+        android:src="@drawable/menu2_kiesweg"
+        android:layout_centerHorizontal="true"/>
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="350dp"
+            android:orientation="horizontal">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="25dp"
+               android:id="@+id/menu2_kruispunt"
+               android:src="@drawable/menu2_kruispunt"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPageKruispunt" />
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="25dp"
+               android:id="@+id/menu2_rotonde"
+               android:src="@drawable/menu2_rotonde"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPageRotonde" />
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="25dp"
+               android:id="@+id/menu2_tsplit"
+               android:src="@drawable/menu2_tsplit"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPageTsplit" />
+
+            <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/menu2_invoeg"
+               android:src="@drawable/menu2_invoeg"
+               android:layout_centerVertical="true"
+               android:layout_alignParentStart="true"
+               android:clickable="true"
+               android:onClick="newPageInvoeg" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>
