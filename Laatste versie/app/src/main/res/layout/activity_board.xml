@@ -82,6 +82,17 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true" />
 
+        <ImageButton
+            android:id="@+id/btnBG"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/btnClear"
+            android:src="@drawable/bg"
+            android:onClick="changeBG"
+            android:clickable="true"
+            />
+
     </RelativeLayout>
 
 </RelativeLayout>

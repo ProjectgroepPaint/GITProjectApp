@@ -42,28 +42,28 @@ public class NewGameActivity extends Activity {
     }
 
     public void newPageKruispunt(View V) {
-        Board.setString("kruispunt");
+        Board.setBGint(0);
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
     }
 
     public void newPageRotonde (View V) {
-        Board.setString("rotonde");
+        Board.setBGint(1);
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
     }
 
     public void newPageTsplit (View V) {
-        Board.setString("tsplit");
+        Board.setBGint(2);
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");
     }
 
     public void newPageInvoeg(View V) {
-        Board.setString("invoegstrook");
+        Board.setBGint(3);
         Intent intent = new Intent(this, Board.class);
         startActivity(intent);
         Log.d("startactivity", "end of new page method");

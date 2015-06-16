@@ -19,6 +19,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
+import java.util.ArrayList;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -27,16 +28,18 @@ import java.util.HashMap;
 
 public class Board extends Activity implements OnClickListener {
 
-    public static String stringImage;
     public static String ImagePath;
+    public static int BGint = 0;
     private static boolean SpawnImage = false;
 
-    public static void setString(String s){
-        stringImage = s;
-    }
     public static void setImage(String s){
         ImagePath = s;
     }
+    public static void setBGint(int s){
+        BGint = s;
+    }
+
+    static ArrayList<String> BG = new ArrayList<String>();
 
 
     private ImageView eraser;
@@ -48,7 +51,10 @@ public class Board extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
-
+        BG.add("kruispunt");
+        BG.add("rotonde");
+        BG.add("tsplit");
+        BG.add("invoegstrook");
         if (savedInstanceState == null) {
 
             drawingView = (DrawingView) findViewById(R.id.drawing);
@@ -60,21 +66,10 @@ public class Board extends Activity implements OnClickListener {
             eraser = (ImageView) findViewById(R.id.eraser);
             eraser.setOnClickListener(this);
         }
-        //setContentView(R.layout.activity_board);
-
-        String source = "drawable/";
-
-        String uri = source + stringImage;
-
-        HashMap<String, Integer> images = new HashMap<String, Integer>();
-        images.put( "kruispunt", Integer.valueOf( R.drawable.kruispunt ) );
-        images.put( "rotonde", Integer.valueOf( R.drawable.rotonde ) );
-        images.put("tsplit", Integer.valueOf(R.drawable.tsplit));
-        images.put("invoegstrook", Integer.valueOf(R.drawable.invoegstrook));
 
         ImageView img=(ImageView)
         findViewById(R.id.wegdek);
-        img.setImageResource(images.get(stringImage).intValue());
+        img.setImageResource(getImageId(this, BG.get(BGint)));
 
     }
     @Override
@@ -85,6 +80,17 @@ public class Board extends Activity implements OnClickListener {
         {
             createbord();
         }
+    }
+
+    public void changeBG(View V)
+    {
+        BGint = BGint + 1;
+        if (BGint == 4)
+        {BGint = 0;}
+        String achtergrond = BG.get(BGint);
+        ImageView img=(ImageView)
+                findViewById(R.id.wegdek);
+        img.setImageResource(getImageId(this, achtergrond));
     }
 
     @Override
