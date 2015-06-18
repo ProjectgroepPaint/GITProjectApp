@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -21,6 +23,8 @@ import java.io.InputStream;
 import java.util.UUID;
 import java.util.ArrayList;
 import android.widget.LinearLayout;
+import android.content.ClipData;
+import android.content.ClipDescription;
 import android.widget.RelativeLayout;
 
 import java.util.HashMap;
@@ -28,9 +32,14 @@ import java.util.HashMap;
 
 public class Board extends Activity implements OnClickListener {
 
+    String msg;
+    //private android.widget.RelativeLayout.LayoutParams layoutParams;
+
     public static String ImagePath;
     public static int BGint = 0;
     private static boolean SpawnImage = false;
+    public static View ImageV;
+
 
     public static void setImage(String s){
         ImagePath = s;
@@ -39,12 +48,15 @@ public class Board extends Activity implements OnClickListener {
         BGint = s;
     }
 
+
+    final RelativeLayout.LayoutParams[] layoutParams = {new RelativeLayout.LayoutParams(100, 100)};
+    final RelativeLayout.LayoutParams[] layoutParams2 = {new RelativeLayout.LayoutParams(100, 100)};
+
     static ArrayList<String> BG = new ArrayList<String>();
 
 
     private ImageView eraser;
     private ImageButton btnClear;
-
     private DrawingView drawingView;
 
     @Override
@@ -65,12 +77,14 @@ public class Board extends Activity implements OnClickListener {
 
             eraser = (ImageView) findViewById(R.id.eraser);
             eraser.setOnClickListener(this);
-        }
+
+
 
         ImageView img=(ImageView)
         findViewById(R.id.wegdek);
         img.setImageResource(getImageId(this, BG.get(BGint)));
 
+    }
     }
     @Override
     protected void onStart()
@@ -137,22 +151,119 @@ public class Board extends Activity implements OnClickListener {
     public static void ImageTrue() {SpawnImage = true;}
     public static void ImageFalse() {SpawnImage = false;}
 
-    int i = 100;
+
     public void createbord()
     {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(i, 100);
-        i = i - 50;
-        ImageView Image = new ImageView(this);
+        //RelativeLayout.LayoutParams layoutParamsImage = new RelativeLayout.LayoutParams(100, 100);
+        final ImageView Image = new ImageView(this);
         Image.setImageResource(getImageId(this, ImagePath));
+        int ViewID=View.generateViewId();
+        Image.setId(ViewID);
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
         rl.addView(Image);
-        Image.setLayoutParams(layoutParams);
+        Image.setLayoutParams(layoutParams2[0]);
         ImageFalse();
+        Image.setX(300);
+        Image.setY(300);
+        //Image.setOnClickListener(this);
+        Image.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData.Item item = new ClipData.Item((CharSequence)v.getTag());
+                String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+
+                ClipData dragData = new ClipData(v.getTag().toString(),mimeTypes, item);
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(Image);
+
+                v.startDrag(dragData,myShadow,null,0);
+                return true;
+            }
+        });
+
+        drawingView.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+
+                switch(event.getAction())
+                {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        layoutParams[0] = (RelativeLayout.LayoutParams)v.getLayoutParams();
+                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED");
+
+                        // Do nothing
+                        break;
+
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENTERED");
+                        int x_cord = (int) event.getX();
+                        int y_cord = (int) event.getY();
+                        break;
+
+                    case DragEvent.ACTION_DRAG_EXITED :
+                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_EXITED");
+                        //RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
+                        //rl.removeView (ImageV);
+                        break;
+
+                    case DragEvent.ACTION_DRAG_LOCATION  :
+                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_LOCATION");
+                        break;
+
+                    case DragEvent.ACTION_DRAG_ENDED   :
+                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENDED");
+                        // Do nothing
+                        break;
+
+                    case DragEvent.ACTION_DROP:
+                        RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
+                        Log.d(msg, "ACTION_DROP event");
+                        float x = event.getX();
+                        float left = drawingView.getLeft();
+                        float top = drawingView.getTop() - 75;
+                        float right = drawingView.getRight() - 75;
+                        float y = event.getY();
+                        if(left + x > right && y > top){rl.removeView (ImageV);}
+                        ImageV.setX(left + x);
+                        ImageV.setY(y);
+
+                        // Do nothing
+                        break;
+                    default: break;
+                }
+                return true;
+            }
+        });
+
+
+        Image.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    setview(v);
+                    ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(Image);
+
+                    Image.startDrag(data, shadowBuilder, Image, 0);
+                    Image.setVisibility(View.VISIBLE);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        });
+
     }
 
     public void onBackPressed()
     {
         /*do nothing*/
+    }
+
+    public void setview(View v)
+    {
+        ImageV = v;
     }
 
     public void onClick(View v) {
