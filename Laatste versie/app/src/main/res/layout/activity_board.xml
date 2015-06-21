@@ -41,6 +41,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/wegknop"
         android:src="@drawable/zebrapad"
+        android:onClick="newSignPage"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/bordknop"
         android:layout_alignEnd="@+id/bordknop" />
@@ -59,6 +60,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/voertuigknop"
+        android:onClick="newVerhiclePage"
         android:src="@drawable/car2"
         android:layout_marginTop="30dp"
         android:layout_alignTop="@+id/wegknop"

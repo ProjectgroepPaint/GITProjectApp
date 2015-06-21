@@ -136,6 +136,20 @@ public class Board extends Activity implements OnClickListener {
         drawingView.activateEraser();
     }
 
+    public void newSignPage(View V) {
+        Intent toBintent = new Intent(this, choose_roadsigns.class);
+        toBintent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(toBintent);
+        drawingView.activateEraser();
+    }
+
+    public void newVerhiclePage(View V) {
+        Intent toBintent = new Intent(this, choose_vehicle.class);
+        toBintent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(toBintent);
+        drawingView.activateEraser();
+    }
+
     public static int getImageId(Context context, String imageName) {
         return context.getResources().getIdentifier("drawable/" + imageName, null, context.getPackageName());
     }
@@ -223,8 +237,8 @@ public class Board extends Activity implements OnClickListener {
                         float right = drawingView.getRight() - 75;
                         float y = event.getY();
                         if(left + x > right && y > top){rl.removeView (ImageV);}
-                        ImageV.setX(left + x);
-                        ImageV.setY(y);
+                        ImageV.setX(left + x - 50);
+                        ImageV.setY(y - 18);
 
                         // Do nothing
                         break;

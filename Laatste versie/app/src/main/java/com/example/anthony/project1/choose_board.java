@@ -105,15 +105,6 @@ public class choose_board extends Activity implements View.OnClickListener {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goBack(View V) {
-
-        Intent backIntent = new Intent(this, Board.class);
-        backIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(backIntent);
-        Board.setImage("stop");
-        Board.ImageTrue();
-
-    }
     @Override
     public void onBackPressed() {
         Intent backIntent = new Intent(this, Board.class);

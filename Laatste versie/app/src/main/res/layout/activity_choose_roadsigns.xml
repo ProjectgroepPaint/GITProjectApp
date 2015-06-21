@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView17"
+        android:tag="busbaan"
         android:src="@drawable/busbaan"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -23,6 +24,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView18"
+        android:tag="fietspad2"
         android:src="@drawable/fietspad2"
         android:layout_marginStart="114dp"
         android:layout_alignTop="@+id/imageView20"
@@ -32,6 +34,7 @@
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:id="@+id/imageView19"
+        android:tag="haaientanden2"
         android:src="@drawable/haaientanden2"
         android:layout_alignBottom="@+id/imageView20"
         android:layout_toEndOf="@+id/imageView18"
@@ -41,25 +44,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView20"
+        android:tag="zebrapad"
         android:src="@drawable/zebrapad"
         android:layout_marginEnd="86dp"
         android:layout_alignBottom="@+id/imageView17"
         android:layout_alignParentEnd="true" />
 
-
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="200dp"
-        android:id="@+id/imageView24"
-        android:src="@drawable/lines"
-        android:layout_marginBottom="54dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/imageView17" />
-
     <ImageView
         android:layout_width="100dp"
         android:layout_height="200dp"
         android:id="@+id/imageView21"
+        android:tag="fietspadm"
         android:src="@drawable/fietspadm"
         android:layout_alignTop="@+id/imageView24"
         android:layout_toStartOf="@+id/imageView19" />
@@ -68,6 +63,7 @@
         android:layout_width="100dp"
         android:layout_height="200dp"
         android:id="@+id/imageView22"
+        android:tag="fietspadz"
         android:src="@drawable/fietspadz"
         android:layout_alignBottom="@+id/imageView21"
         android:layout_alignStart="@+id/imageView19" />
@@ -76,9 +72,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView23"
+        android:tag="weg"
         android:src="@drawable/weg"
         android:layout_alignBottom="@+id/imageView22"
         android:layout_alignStart="@+id/imageView20" />
+
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView24"
+        android:tag="lines"
+        android:src="@drawable/lines"
+        android:layout_marginBottom="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageView17" />
+
+
+
+
 
 
 </RelativeLayout>
