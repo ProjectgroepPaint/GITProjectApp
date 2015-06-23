@@ -94,21 +94,16 @@ public class DrawingView extends View implements View.OnTouchListener {
         for (Pair<Path, Paint> p : paths) {
             canvas.drawPath(p.first, p.second);
         }
-
     }
 
     private void touch_start(float x, float y) {
 
         if (isEraserActive) {
-            //m_Paint.setColor(Color.WHITE);
-            //m_Paint.setStrokeWidth(10);
-            //Paint newPaint = new Paint(m_Paint); // Clones the mPaint object
-            //paths.add(new Pair<Path, Paint>(m_Path, newPaint));
-
+            //do nothing
         } else {
             m_Paint.setColor(Color.WHITE);
             m_Paint.setStrokeWidth(10);
-            Paint newPaint = new Paint(m_Paint); // Clones the mPaint object
+            Paint newPaint = new Paint(m_Paint);
             paths.add(new Pair<Path, Paint>(m_Path, newPaint));
 
         }
@@ -136,12 +131,10 @@ public class DrawingView extends View implements View.OnTouchListener {
         if (!isEraserActive) {
             m_Path.lineTo(mX, mY);
 
-            // commit the path to our offscreen
             m_Canvas.drawPath(m_Path, m_Paint);
 
-            // kill this so we don't double draw
             m_Path = new Path();
-            Paint newPaint = new Paint(m_Paint); // Clones the mPaint object
+            Paint newPaint = new Paint(m_Paint);
             paths.add(new Pair<Path, Paint>(m_Path, newPaint));
         }
     }
@@ -169,41 +162,4 @@ public class DrawingView extends View implements View.OnTouchListener {
 
         invalidate();
     }
-
-//	public void onClickPenColorButton(int penColor) {
-//
-//		if (isEraserActive) {
-//			m_Paint.setColor(Color.WHITE);
-//			Paint newPaint = new Paint(m_Paint); // Clones the mPaint object
-//			paths.add(new Pair<Path, Paint>(m_Path, newPaint));
-//
-//			isEraserActive = false;
-//		} else {
-//			m_Paint.setColor(Color.RED);
-//			Paint newPaint = new Paint(m_Paint); // Clones the mPaint object
-//			paths.add(new Pair<Path, Paint>(m_Path, newPaint));
-//
-//			isEraserActive = true;
-//		}
-//
-//	}
-//
-//	public void onClickUndo() {
-//		if (paths.size() > 0) {
-//			undonePaths.add(paths.remove(paths.size() - 1));
-//			invalidate();
-//		} else {
-//
-//		}
-//	}
-//
-//	public void onClickRedo() {
-//		if (undonePaths.size() > 0) {
-//			paths.add(undonePaths.remove(undonePaths.size() - 1));
-//			invalidate();
-//		} else {
-//
-//		}
-//	}
-
 }

@@ -33,7 +33,6 @@ import java.util.HashMap;
 public class Board extends Activity implements OnClickListener {
 
     String msg;
-    //private android.widget.RelativeLayout.LayoutParams layoutParams;
 
     public static String ImagePath;
     public static int BGint = 0;
@@ -51,8 +50,6 @@ public class Board extends Activity implements OnClickListener {
     }
 
 
-    final RelativeLayout.LayoutParams[] layoutParams = {new RelativeLayout.LayoutParams(100, 100)};
-    final RelativeLayout.LayoutParams[] layoutParams2 = {new RelativeLayout.LayoutParams(100, 100)};
 
     static ArrayList<String> BG = new ArrayList<String>();
 
@@ -146,20 +143,12 @@ public class Board extends Activity implements OnClickListener {
     }
 
 
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		// Inflate the menu; this adds items to the action bar if it is present.
-//		getMenuInflater().inflate(R.menu.activity_main, menu);
-//		return true;
-//	}
-
     public static void ImageTrue() {SpawnImage = true;}
     public static void ImageFalse() {SpawnImage = false;}
 
 
     public void createbord()
     {
-        //RelativeLayout.LayoutParams layoutParamsImage = new RelativeLayout.LayoutParams(100, 100);
         final ImageView Image = new ImageView(this);
         Image.setImageResource(getImageId(this, ImagePath));
         int ViewID=View.generateViewId();
@@ -169,7 +158,6 @@ public class Board extends Activity implements OnClickListener {
         ImageFalse();
         Image.setX(300);
         Image.setY(300);
-        //Image.setOnClickListener(this);
         Image.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -190,37 +178,8 @@ public class Board extends Activity implements OnClickListener {
 
                 switch(event.getAction())
                 {
-                    case DragEvent.ACTION_DRAG_STARTED:
-                        //layoutParams[0] = (RelativeLayout.LayoutParams)v.getLayoutParams();
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED");
-
-                        // Do nothing
-                        break;
-
-                    case DragEvent.ACTION_DRAG_ENTERED:
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENTERED");
-                        int x_cord = (int) event.getX();
-                        int y_cord = (int) event.getY();
-                        break;
-
-                    case DragEvent.ACTION_DRAG_EXITED :
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_EXITED");
-                        //RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
-                        //rl.removeView (ImageV);
-                        break;
-
-                    case DragEvent.ACTION_DRAG_LOCATION  :
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_LOCATION");
-                        break;
-
-                    case DragEvent.ACTION_DRAG_ENDED   :
-                        Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENDED");
-                        // Do nothing
-                        break;
-
-                    case DragEvent.ACTION_DROP:
+                        case DragEvent.ACTION_DROP:
                         RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
-                        Log.d(msg, "ACTION_DROP event");
                         float x = event.getX();
                         float left = drawingView.getLeft();
                         float top = drawingView.getTop();
@@ -231,8 +190,6 @@ public class Board extends Activity implements OnClickListener {
 
                         ImageV.setX((left + x) - Imagewidth);
                         ImageV.setY((y + top) - Imageheight);
-
-                        // Do nothing
                         break;
                     default: break;
                 }
@@ -263,9 +220,7 @@ public class Board extends Activity implements OnClickListener {
     }
 
     public void onBackPressed()
-    {
-        /*do nothing*/
-    }
+    {/*do nothing*/}
 
     public void setview(View v)
     {
@@ -282,15 +237,15 @@ public class Board extends Activity implements OnClickListener {
 
                 drawingView.deactivateEraser();
 
-
             } else {
 
                 drawingView.activateEraser();
-            }
 
+            }
         } else if (v == btnClear) {
 
             drawingView.reset();
+
         }
     }
 
