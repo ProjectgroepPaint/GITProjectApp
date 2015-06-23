@@ -58,11 +58,11 @@
 
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/voertuigknop"
         android:onClick="newVerhiclePage"
         android:src="@drawable/car2"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="110dp"
         android:layout_alignTop="@+id/wegknop"
         android:layout_alignStart="@+id/wegknop" />
 
@@ -83,17 +83,6 @@
             android:src="@drawable/ic_action_discard"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true" />
-
-        <ImageButton
-            android:id="@+id/btnBG"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginLeft="5dp"
-            android:layout_toLeftOf="@+id/btnClear"
-            android:src="@drawable/bg"
-            android:onClick="changeBG"
-            android:clickable="true"
-            />
 
     </RelativeLayout>
 

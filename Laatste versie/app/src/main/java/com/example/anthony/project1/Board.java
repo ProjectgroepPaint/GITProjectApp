@@ -98,17 +98,6 @@ public class Board extends Activity implements OnClickListener {
         }
     }
 
-    public void changeBG(View V)
-    {
-        BGint = BGint + 1;
-        if (BGint == 4)
-        {BGint = 0;}
-        String achtergrond = BG.get(BGint);
-        ImageView img=(ImageView)
-                findViewById(R.id.wegdek);
-        img.setImageResource(getImageId(this, achtergrond));
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
