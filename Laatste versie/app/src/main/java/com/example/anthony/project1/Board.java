@@ -39,6 +39,8 @@ public class Board extends Activity implements OnClickListener {
     public static int BGint = 0;
     private static boolean SpawnImage = false;
     public static View ImageV;
+    public static int Imageheight;
+    public static int Imagewidth;
 
 
     public static void setImage(String s){
@@ -175,7 +177,6 @@ public class Board extends Activity implements OnClickListener {
         Image.setId(ViewID);
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.layout5);
         rl.addView(Image);
-        Image.setLayoutParams(layoutParams2[0]);
         ImageFalse();
         Image.setX(300);
         Image.setY(300);
@@ -201,7 +202,7 @@ public class Board extends Activity implements OnClickListener {
                 switch(event.getAction())
                 {
                     case DragEvent.ACTION_DRAG_STARTED:
-                        layoutParams[0] = (RelativeLayout.LayoutParams)v.getLayoutParams();
+                        //layoutParams[0] = (RelativeLayout.LayoutParams)v.getLayoutParams();
                         Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED");
 
                         // Do nothing
@@ -233,12 +234,14 @@ public class Board extends Activity implements OnClickListener {
                         Log.d(msg, "ACTION_DROP event");
                         float x = event.getX();
                         float left = drawingView.getLeft();
-                        float top = drawingView.getTop() - 75;
-                        float right = drawingView.getRight() - 75;
+                        float top = drawingView.getTop();
+                        float Trashtop = drawingView.getTop() - 75;
+                        float Trashright = drawingView.getRight() - 75;
                         float y = event.getY();
-                        if(left + x > right && y > top){rl.removeView (ImageV);}
-                        ImageV.setX(left + x - 50);
-                        ImageV.setY(y - 18);
+                        if(left + x > Trashright && y > Trashtop){rl.removeView (ImageV);}
+
+                        ImageV.setX((left + x) - Imagewidth);
+                        ImageV.setY((y + top) - Imageheight);
 
                         // Do nothing
                         break;
@@ -278,6 +281,8 @@ public class Board extends Activity implements OnClickListener {
     public void setview(View v)
     {
         ImageV = v;
+        Imageheight = ImageV.getMeasuredHeight()/2;
+        Imagewidth = ImageV.getMeasuredWidth()/2;
     }
 
     public void onClick(View v) {

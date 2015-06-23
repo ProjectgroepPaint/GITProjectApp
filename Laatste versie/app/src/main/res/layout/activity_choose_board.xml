@@ -14,7 +14,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/bordknop"
-        android:tag="voorrangs_bord"
+        android:tag="voorrangs_bordb"
         android:src="@drawable/voorrangs_bord"
         android:layout_alignTop="@+id/wegdek"
         android:layout_alignParentStart="true"/>
@@ -23,7 +23,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView3"
-        android:tag="einde_voorrang"
+        android:tag="einde_voorrangb"
         android:src="@drawable/einde_voorrang"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/imageView4"
@@ -33,7 +33,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView4"
-        android:tag="voorrang2"
+        android:tag="voorrang2b"
         android:src="@drawable/voorrang2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -42,7 +42,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView5"
-        android:tag="haaientand"
+        android:tag="haaientandb"
         android:src="@drawable/haaientand"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/imageView6"
@@ -53,7 +53,7 @@
         android:layout_height="100dp"
         android:id="@+id/imageView6"
         android:src="@drawable/stop"
-        android:tag="stop"
+        android:tag="stopb"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="38dp"/>
@@ -63,7 +63,7 @@
         android:layout_height="100dp"
         android:id="@+id/imageView7"
         android:src="@drawable/rotonde2"
-        android:tag="rotonde2"
+        android:tag="rotonde2b"
         android:layout_marginBottom="51dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
@@ -73,7 +73,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView8"
-        android:tag="verboden_in"
+        android:tag="verboden_inb"
         android:src="@drawable/verboden_in"
         android:layout_below="@+id/bordknop"
         android:layout_alignParentStart="true"
@@ -83,7 +83,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView9"
-        android:tag="verboden_in2"
+        android:tag="verboden_in2b"
         android:src="@drawable/verboden_in2"
         android:layout_alignTop="@+id/imageView8"
         android:layout_alignStart="@+id/imageView3" />
@@ -92,7 +92,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView10"
-        android:tag="rechtdoor"
+        android:tag="rechtdoorb"
         android:src="@drawable/rechtdoor"
         android:layout_alignTop="@+id/imageView9"
         android:layout_centerHorizontal="true" />
@@ -101,7 +101,7 @@
         android:layout_width="110dp"
         android:layout_height="70dp"
         android:id="@+id/imageView11"
-        android:tag="links"
+        android:tag="linksb"
         android:src="@drawable/links"
         android:layout_alignTop="@+id/imageView10"
         android:layout_alignStart="@+id/imageView5" />
@@ -110,7 +110,7 @@
         android:layout_width="110dp"
         android:layout_height="70dp"
         android:id="@+id/imageView12"
-        android:tag="rechts"
+        android:tag="rechtsb"
         android:src="@drawable/rechts"
         android:layout_alignTop="@+id/imageView11"
         android:layout_alignStart="@+id/imageView6" />
@@ -121,7 +121,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView13"
-        android:tag="verb_inhalen"
+        android:tag="verb_inhalenb"
         android:src="@drawable/verb_inhalen"
         android:layout_alignTop="@+id/imageView7"
         android:layout_alignStart="@+id/imageView9" />
@@ -130,7 +130,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView14"
-        android:tag="verboden_keren"
+        android:tag="verboden_kerenb"
         android:src="@drawable/verboden_keren"
         android:layout_alignBottom="@+id/imageView13"
         android:layout_alignStart="@+id/imageView10" />
@@ -139,7 +139,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView15"
-        android:tag="voetgangers"
+        android:tag="voetgangersb"
         android:src="@drawable/voetgangers"
         android:layout_alignTop="@+id/imageView14"
         android:layout_alignStart="@+id/imageView11" />
@@ -148,7 +148,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView16"
-        android:tag="fietspad"
+        android:tag="fietspadb"
         android:src="@drawable/fietspad"
         android:layout_alignTop="@+id/imageView15"
         android:layout_alignStart="@+id/imageView12" />
