@@ -34,7 +34,7 @@ public class Board extends Activity implements OnClickListener
     public static int Imageheight;
     public static int Imagewidth;
 
-    public static float a = 0;
+    public static float rotation = 0;
 
 
     public static void setImage(String s){
@@ -184,12 +184,12 @@ public class Board extends Activity implements OnClickListener
                         float x = event.getX();
                         float left = drawingView.getLeft();
                         float top = drawingView.getTop();
-                        float Trashtop = drawingView.getTop() - 100;
+                        float Trashtop = drawingView.getTop() + 50;
                         float Trashright = drawingView.getRight() - 100;
                         float turnleft = drawingView.getLeft() + 100;
                         float y = event.getY();
 
-                        if (left + x > Trashright && y > Trashtop)
+                        if (left + x > Trashright && y < Trashtop)
                         {
                             rl.removeView(ImageV);
                         }
@@ -197,7 +197,7 @@ public class Board extends Activity implements OnClickListener
                         ImageV.setX((left + x) - Imagewidth);
                         ImageV.setY((y + top) - Imageheight);
 
-                        if (left + x < turnleft && y > Trashtop)
+                        if (left + x < turnleft && y < Trashtop)
                         {
                             rotate();
                         }
@@ -251,10 +251,10 @@ public class Board extends Activity implements OnClickListener
         ImageView img = (ImageView)ImageV;
 
         Matrix m = new Matrix();
-        if (a == 360f){a = 0;}
-        a = a + 45;
+        if (rotation == 360f){rotation = 0;}
+        rotation = rotation + 45;
         //ImageV.setLayoutParams(new RelativeLayout.LayoutParams(Imagewidth * 2, Imagewidth * 2));
-        m.postRotate(a, Imagewidth, Imageheight);
+        m.postRotate(rotation, Imagewidth, Imageheight);
         img.setScaleType(ImageView.ScaleType.MATRIX);
         img.setImageMatrix(m);
     }
@@ -265,7 +265,6 @@ public class Board extends Activity implements OnClickListener
         if (v == eraser)
         {
 
-            rotate();
             if (drawingView.isEraserActive())
             {
 
